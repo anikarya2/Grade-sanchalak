@@ -1,0 +1,239 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+    background-size: 200% 200%; /* Larger background for smooth animation */
+    animation: gradient 5s ease infinite; /* Animation for the gradient */
+}
+
+/* Main Container */
+.container {
+    background: #ffffff;
+    color: #333;
+    padding: 30px 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 700px; /* Reduced max-width */
+    text-align: center;
+    transition: all 0.4s ease;
+    margin-top: 50px; /* Added top margin */
+    position: relative;
+    z-index: 1;
+}
+
+.container:hover {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    transform: scale(1.02);
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Gradient Overlay */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+    z-index: -1;
+}
+
+/* Headings */
+h1, h2 {
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2.5em;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #555;
+    margin-bottom: 15px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and Button Styles */
+input[type="text"], input[type="file"], textarea {
+    width: 90%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    color: #555;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"]:focus, input[type="file"]:focus, textarea:focus {
+    border-color: #6a11cb;
+    outline: none;
+    box-shadow: 0 0 15px rgba(106, 17, 203, 0.5);
+    background-color: #e8f0fe;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #fff;
+    padding: 18px 35px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    background: linear-gradient(to right, #2575fc, #6a11cb);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    color: #ffffff;
+}
+
+/* Results Section */
+ul {
+    padding: 0;
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+ul li {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+ul li:hover {
+    background-color: #f4f4f4;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Matching Keywords */
+ul.keywords {
+    background: #e3f2fd;
+    border-left: 4px solid #42a5f5;
+    padding: 12px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul.keywords li {
+    color: #1565c0;
+    font-weight: bold;
+    margin: 7px 0;
+}
+
+/* Non-Matching Keywords */
+ul.non-matching {
+    background: #ffebee;
+    border-left: 4px solid #e53935;
+    padding: 12px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul.non-matching li {
+    color: #b71c1c;
+    font-weight: bold;
+    margin: 7px 0;
+}
+
+/* Score Section */
+.score {
+    margin-top: 25px;
+    padding: 18px;
+    background: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    color: #388e3c;
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Hover Effects for Results */
+ul li:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin-top: 40px; /* Slightly reduced margin-top on mobile */
+    }
+
+    input[type="text"], input[type="file"], textarea {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px 0;
+    }
+}
